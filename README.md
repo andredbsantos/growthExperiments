@@ -1,4 +1,4 @@
-# Growth Experiments
+# Growth Experiments [![Codacy Badge](https://api.codacy.com/project/badge/Grade/96be5de1b109427fa20d689dba687b5c)](https://www.codacy.com/app/wildlifechorus/growthExperiments?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wildlifechorus/growthExperiments&amp;utm_campaign=Badge_Grade)
 
 Simple little application to help you manage your growth experiences pipeline.
 
