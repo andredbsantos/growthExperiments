@@ -74,6 +74,7 @@ class ExperimentsTableSeeder extends Seeder
             'bs_confidence' => 2,
             'bs_effort' => 1,
             'bs_results' => 'Stripe',
+            'pr_priority' => 1,
             'created_at' => Carbon::now()
         ]);
     }
