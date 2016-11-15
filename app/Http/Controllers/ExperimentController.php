@@ -30,12 +30,31 @@ class ExperimentController extends Controller
     public function index()
     {
         $experiments = Experiment::where('archived', '=', false)
-                                 ->orderBy('pr_priority', 'desc')
-                                 ->orderBy('phase', 'asc')
-                                 ->orderBy('due_date', 'asc')
-                                 ->paginate(10);
+                                    ->orderBy('pr_priority', 'desc')
+                                    ->orderBy('phase', 'asc')
+                                    ->orderBy('due_date', 'asc')
+                                    ->paginate(10);
 
         return view('experiments/list')->with('experiments', $experiments);
+    }
+
+    /**
+     * Display a listing of the resource (search).
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search()
+    {
+        $search = \Request::get('search');
+
+        $experiments = Experiment::where('name', 'like', '%'.$search.'%')
+                                    ->orWhere('tags', 'like', '%'.$search.'%')
+                                    ->orderBy('pr_priority', 'desc')
+                                    ->orderBy('phase', 'asc')
+                                    ->orderBy('due_date', 'asc')
+                                    ->paginate(10);
+
+        return view('experiments/search')->with('experiments', $experiments);
     }
 
     /**

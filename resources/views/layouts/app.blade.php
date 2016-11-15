@@ -46,6 +46,17 @@
                         &nbsp;
                     </ul>
 
+                    {!! Form::open(['method' => 'GET', 'route' => 'experiments.search', 'role' => 'search']) !!}
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Search!</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                    {!! Form::close() !!}
+
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
