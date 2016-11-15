@@ -22,6 +22,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Phase</th>
+                                <th>Priority</th>
                                 <th>Creator</th>
                                 <th>Due Date</th>
                                 <th class="text-center">Progress</th>
@@ -35,6 +36,7 @@
                                     <a href="/experiments/edit/{{ $experiment->id }}" />{{ $experiment->name }}</a>
                                 </td>
                                 <td>{{ $experiment->getPhase($experiment->phase) }}</td>
+                                <td>{{ $experiment->getPriority($experiment->pr_priority) }}</td>
                                 <td>{{ $experiment->creator->name }}</td>
                                 <td>{{ $experiment->due_date }}</td>
                                 <td>

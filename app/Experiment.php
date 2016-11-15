@@ -85,6 +85,14 @@ class Experiment extends Model
     }
 
     /**
+     * Get current experiment phase name.
+     */
+    public function getPriority($priority)
+    {
+        return self::$priorities[$priority];
+    }
+
+    /**
      * Get current experiment phase progress value.
      */
     public function getPhaseProgress($phase)
