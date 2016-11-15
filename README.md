@@ -55,8 +55,8 @@ Documentation for the Laravel 5.3 framework can be found on the [Laravel website
 ## Task List ##
 
 - [x] Archive feature
-- [] Add attachments to Experiment
-- [] Search Experiments
+- [ ] Add attachments to Experiment
+- [ ] Search Experiments
 
 ## Copyleft and License
 
