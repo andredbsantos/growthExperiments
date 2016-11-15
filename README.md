@@ -10,7 +10,7 @@ Nice to watch: [Building a Growth Machine](http://www.heavybit.com/library/video
 
 ## Preview ##
 
-![Preview](http://i.imgur.com/mH5KxBu.png)
+![Preview](http://i.imgur.com/jvD27sQ.png)
 
 ## Installation ##
 
