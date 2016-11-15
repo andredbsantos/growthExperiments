@@ -17,12 +17,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Header Counters
-        $liveExperiments        = Experiment::where('archived', '=', false)->count();
-        $archivedExperiments    = Experiment::where('archived', '=', true)->count();
+        // Quick fix because of artisan
+        if (!\App::runningInConsole()) {
+            // Header Counters
+            $liveExperiments        = Experiment::where('archived', '=', false)->count();
+            $archivedExperiments    = Experiment::where('archived', '=', true)->count();
 
-        View::share('liveExperiments', $liveExperiments);
-        View::share('archivedExperiments', $archivedExperiments);
+            View::share('liveExperiments', $liveExperiments);
+            View::share('archivedExperiments', $archivedExperiments);
+        }
     }
 
     /**
