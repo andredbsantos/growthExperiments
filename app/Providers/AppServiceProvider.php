@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\Facades\View;
+
+use App\Experiment;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +17,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Header Counters
+        $liveExperiments        = Experiment::where('archived', '=', false)->count();
+        $archivedExperiments    = Experiment::where('archived', '=', true)->count();
+
+        View::share('liveExperiments', $liveExperiments);
+        View::share('archivedExperiments', $archivedExperiments);
     }
 
     /**

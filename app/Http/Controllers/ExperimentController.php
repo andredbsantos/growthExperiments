@@ -29,9 +29,29 @@ class ExperimentController extends Controller
      */
     public function index()
     {
-        $experiments = Experiment::orderBy('phase', 'asc')->paginate(10);
+        $experiments = Experiment::where('archived', '=', false)
+                                 ->orderBy('pr_priority', 'desc')
+                                 ->orderBy('phase', 'asc')
+                                 ->orderBy('due_date', 'asc')
+                                 ->paginate(10);
 
         return view('experiments/list')->with('experiments', $experiments);
+    }
+
+    /**
+     * Display a listing of the resource (archived).
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function archived()
+    {
+        $experiments = Experiment::where('archived', '=', true)
+                                 ->orderBy('pr_priority', 'desc')
+                                 ->orderBy('phase', 'asc')
+                                 ->orderBy('due_date', 'asc')
+                                 ->paginate(10);
+
+        return view('experiments/archived')->with('experiments', $experiments);
     }
 
     /**
@@ -93,6 +113,36 @@ class ExperimentController extends Controller
         $experiment->update($request->all());
 
         return \Redirect::route('experiments')->with('message', 'Experiment updated successfully!');
+    }
+
+    /**
+     * Update the specified resource in storage to archived.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function archive($id)
+    {
+        $experiment = Experiment::find($id);
+        $experiment->archived = true;
+        $experiment->save();
+
+        return \Redirect::route('experiments.archived')->with('message', 'Experiment archived successfully!');
+    }
+
+    /**
+     * Update the specified resource in storage to unarchived.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function unarchive($id)
+    {
+        $experiment = Experiment::find($id);
+        $experiment->archived = false;
+        $experiment->save();
+
+        return \Redirect::route('experiments')->with('message', 'Experiment unarchived successfully!');
     }
 
     /**

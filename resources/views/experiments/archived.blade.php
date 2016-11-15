@@ -9,10 +9,7 @@
             @endif
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title pull-left">Experiments</h3>
-                    <a href="/experiments/add" />
-                        <button class="btn btn-info pull-right">Add Experiment</button>
-                    </a>
+                    <h3 class="panel-title pull-left">Archived Experiments</h3>
                     <div class="clearfix"></div>
                 </div>
 
@@ -46,8 +43,8 @@
                                     <a title="Edit" href="/experiments/edit/{{ $experiment->id }}" />
                                         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                     </a>
-                                    <a title="Archive" href="/experiments/archive/{{ $experiment->id }}" />
-                                        <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+                                    <a title="Unarchive" href="/experiments/unarchive/{{ $experiment->id }}" />
+                                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                                     </a>
                                     <a title="Delete" href="/experiments/delete/{{ $experiment->id }}" />
                                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
