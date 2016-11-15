@@ -22,7 +22,7 @@ Auth::routes();
 // Experiments
 Route::get('/experiments', 'ExperimentController@index')->name('experiments');
 Route::get('/experiments/archived', 'ExperimentController@archived')->name('experiments.archived');
-Route::get('/experiments', 'ExperimentController@search')->name('experiments.search');
+Route::get('/experiments/search', 'ExperimentController@search')->name('experiments.search');
 Route::get('/experiments/add', 'ExperimentController@create');
 Route::post('/experiments/add', 'ExperimentController@store');
 Route::get('/experiments/edit/{id}', 'ExperimentController@edit')->name('experiments.edit');
