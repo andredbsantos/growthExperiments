@@ -14,6 +14,7 @@
                 </div>
 
                 <div class="panel-body">
+                    @if (count($experiments))
                     <table class="table">
                         <thead class="thead-default">
                             <tr>
@@ -56,6 +57,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    @else
+                    <p>No experiments found!</p>
+                    @endif
                 </div>
             </div>
 
